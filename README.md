@@ -25,3 +25,26 @@ That’s why we need API versioning mechanism
 
 Please note that you can implement a real video processing using any library you want.
 Another option is to emulate video processing using time delay (from 20 seconds to 2 minutes) and returning link to the source video.
+
+## Install FFmpeg (Ubuntu)
+
+FFmpeg has been removed from Ubuntu 14.04 and was replaced by Libav.
+This decision has been reversed so that FFmpeg is available now in Ubuntu 15.04 again, but there is still no official package for 14.04.
+In this tutorial, I will show you how to install FFmpeg from mc3man ppa. Add the mc3man ppa:
+
+    sudo add-apt-repository ppa:mc3man/trusty-media
+    
+And confirm the following message by pressing <enter>:
+
+    Also note that with apt-get a sudo apt-get dist-upgrade is needed for initial setup & with some package upgrades
+    More info: https://launchpad.net/~mc3man/+archive/ubuntu/trusty-media
+    Press [ENTER] to continue or ctrl-c to cancel adding it
+
+Update the package list:
+
+    sudo apt-get update
+    sudo apt-get dist-upgrade
+    
+Now FFmpeg is available to be installed with apt:
+
+    sudo apt-get install ffmpeg
