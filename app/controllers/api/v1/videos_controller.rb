@@ -39,7 +39,7 @@ class Api::V1::VideosController < Api::BaseController
       user = User.find_by(uid: params[:user_uid])
       videos = user.videos
 
-      render json: videos.to_json(only: [:duration], methods: [:video_path])
+      render json: videos.to_json(only: [:duration, :status], methods: [:video_path])
     end
   end
 
