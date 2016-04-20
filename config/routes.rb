@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   namespace :api do
 
     namespace :v1 do
-
-      post 'video/crop' => 'video#crop'
-
+      post 'videos/crop' => 'videos#crop'
+      post 'videos/restart' => 'videos#restart'
+      resources :videos, only: [:index, :show]
+      resources :errors, only: [:index]
     end
 
   end
